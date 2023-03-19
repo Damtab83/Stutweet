@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Post
 {
     #[ORM\Id()]
-    #[ORM\GeneratedValues(strategy: "AUTO")]
+    #[ORM\GeneratedValue(strategy: "AUTO")]
     #[ORM\Column(type: "integer")]
     private int $id;
 
@@ -20,7 +20,7 @@ class Post
     #[ORM\Column(type: "text",  length:320)]
     private string $content;
 
-    #[ORM\Column(type: "text")]
+    #[ORM\Column(type: "text", nullable:true)]
     private ?string $image = null;
 
     // #[ORM\Column(type: "User")]
